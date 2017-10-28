@@ -23,7 +23,7 @@ done < "${SHOW_DATA_FILE}"
 
 cd ${LOCALDIR}
 
-wget_opts='--user=${FTP_USER} --password=${FTP_PASSWORD}'
+wget_opts="--user=${FTP_USER} --password=${FTP_PASSWORD}"
 result_mesg="PRX download started"
 
 for show in "${!shows[@]}"
