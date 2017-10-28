@@ -23,7 +23,6 @@ done < "${SHOW_DATA_FILE}"
 
 cd ${LOCALDIR}
 
-wget_opts="--user=\"${FTP_USER}\" --password=\"${FTP_PASSWORD}\""
 result_mesg="PRX download started"
 
 for show in "${!shows[@]}"
@@ -34,7 +33,7 @@ do
   then
     cd "${LOCALDIR}/${subdir}"
 #    num_downloaded=$(wget -N ${wget_opts} ftp://${FTP_SERVER}/${ftpdir}/* 2>&1 | grep -c 'saved')
-    wget -N ${wget_opts} ftp://${FTP_SERVER}/${ftpdir}/*
+    wget -N ftp://${FTP_USER}:$FTP_PASSWORD}@${FTP_SERVER}/${ftpdir}/*
     if (( num_downloaded > 1 ))
     then
       mesg="${num_downloaded} files downloaded to ${LOCALDIR}/${subdir} for ${show}"
@@ -42,11 +41,11 @@ do
       mesg="No files downloaded for ${show}"  
     fi
     echo $mesg
-    result_mesg="${result_mesg}\\n${mesg}"
+    result_mesg="${result_mesg}\n${mesg}"
   else
     mesg="Cannot find local directory \"${LOCALDIR}/${subdir}\""
     echo $mesg
-    result_mesg="${result_mesg}\\n${mesg}"
+    result_mesg="${result_mesg}\n${mesg}"
   fi
 done
 
