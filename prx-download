@@ -8,7 +8,6 @@ FTP_PASSWORD="${PD_FTP_PASSWORD:-password}"
 LOCALDIR="${PD_LOCALDIR:-/rfpserver}"
 SHOW_DATA_FILE="${PD_SHOW_DATA_FILE:-show_data.txt}"
 NOTIFY_EMAIL="${PD_NOTIFY_EMAIL:-tim@eschers.com}"
-FLAG_FILE="${PD_FLAG_FILE:-last_download.txt}"
 
 # Show metadata array
 # shows[ftp_directory]=show_name|local_subdirectory
@@ -42,11 +41,17 @@ do
       mesg = "No files downloaded for ${show}"  
     fi
     echo $mesg
-    result_message = "$result_mesg\n$mesg"
+    result_message = "${result_mesg}\n${mesg}"
   else
     mesg = "Cannot find local directory \"${LOCALDIR}/${subdir}\""
     echo $mesg
-    result_message = "$result_message\n$mesg" 
+    result_mesg = "${result_mesg}\n${mesg}" 
   fi
 done
 
+echo ${result_mesg}
+
+if [ -n ${NOTIFY_EMAIL} ]
+then
+  echo "${result_message}" | mail -s "PRX Download" ${NOTIFY_EMAIL}
+fi
