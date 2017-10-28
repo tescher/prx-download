@@ -23,7 +23,7 @@ done < "${SHOW_DATA_FILE}"
 
 cd ${LOCALDIR}
 
-wget_opts='--user=\"${FTP_USER}\" --password=\"${FTP_PASSWORD}\"'
+wget_opts="--user=\"${FTP_USER}\" --password=\"${FTP_PASSWORD}\""
 result_mesg="PRX download started"
 
 for show in "${!shows[@]}"
@@ -42,11 +42,11 @@ do
       mesg="No files downloaded for ${show}"  
     fi
     echo $mesg
-    result_mesg='${result_mesg}\\n${mesg}'
+    result_mesg="${result_mesg}\\n${mesg}"
   else
     mesg="Cannot find local directory \"${LOCALDIR}/${subdir}\""
     echo $mesg
-    result_mesg='${result_mesg}\\n${mesg}'
+    result_mesg="${result_mesg}\\n${mesg}"
   fi
 done
 
