@@ -7,7 +7,7 @@ FTP_USER="${PD_FTP_USER:-username}"
 FTP_PASSWORD="${PD_FTP_PASSWORD:-password}"
 LOCALDIR="${PD_LOCALDIR:-/rfpserver}"
 SHOW_DATA_FILE="${PD_SHOW_DATA_FILE:-show_data.txt}"
-NOTIFY_EMAIL="${PD_NOTIFY_EMAIL:-tim@eschers.com}"
+NOTIFY_EMAIL="${PD_NOTIFY_EMAIL:-tim@eschers.com}"   # Can be comma-delinmited list
 
 # Show metadata array
 # shows[ftp_directory]=show_name|local_subdirectory
