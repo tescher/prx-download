@@ -7,13 +7,13 @@ This only works with shows that use the SubAuto method for delivery and allow se
 Setup
 =====
 
-The following environment variable should be set up:
-PD_FTP_SERVER - The PRX FTP location set up for your account, e.g. youraccount.prxtransfer.org
-PD_FTP_USER - Your PRX FTP user login
-PD_FTP_PASSWORD - Your PRX FTP password
-PD_LOCALDIR - The parent directory where you want files downloaded to
-PD_SHOW_DATA_FILE - The file that lists the shows you want to download, Default is show_data.txt
-PD_NOTIFY_EMAIL - Comma delimited list of email addresses where to send download results
+The following environment variables should be set up:
+* PD_FTP_SERVER - The PRX FTP location set up for your account, e.g. youraccount.prxtransfer.org
+* PD_FTP_USER - Your PRX FTP user login
+* PD_FTP_PASSWORD - Your PRX FTP password
+* PD_LOCALDIR - The parent directory where you want files downloaded to
+* PD_SHOW_DATA_FILE - The file that lists the shows you want to download, Default is show_data.txt
+* PD_NOTIFY_EMAIL - Comma delimited list of email addresses where to send download results
 
 Show Data
 =========
