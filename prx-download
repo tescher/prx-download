@@ -11,7 +11,7 @@ NOTIFY_EMAIL="${PD_NOTIFY_EMAIL:-tim@eschers.com}"
 
 # Show metadata array
 # shows[ftp_directory]=show_name|local_subdirectory
-# read from SHOW_DATA_FILE with lines: show_name|ftp_directory|local_subdirectory
+# read from SHOW_DATA_FILE with lines: show_name|local_subdirectory|ftp_directory
 
 declare -A shows
 
