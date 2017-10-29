@@ -54,5 +54,5 @@ echo ${result_mesg}
 
 if [ -n ${NOTIFY_EMAIL} ]
 then
-  echo "${result_message}" | mail -s "PRX Download" ${NOTIFY_EMAIL}
+  echo "${result_mesg}" | mail -s "PRX Download" ${NOTIFY_EMAIL}
 fi
