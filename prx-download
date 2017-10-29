@@ -11,7 +11,7 @@ NOTIFY_EMAIL="${PD_NOTIFY_EMAIL:-tim@eschers.com}"
 
 # Show metadata array
 # shows[ftp_directory]=show_name|local_subdirectory
-# read from SHOW_DATA_FILE with lines: show_name|local_subdirectory|ftp_directory
+# read from SHOW_DATA_FILE with lines: show_name|ftp_directory|local_subdirectory
 
 declare -A shows
 
@@ -27,7 +27,7 @@ result_mesg="PRX download started"
 
 for show in "${!shows[@]}"
 do
-  IFS="|"; read -r subdir ftpdir <<< "${shows[${show}]}"
+  IFS="|"; read -r ftpdir subdir <<< "${shows[${show}]}"
   echo "Looking for directory \"${LOCALDIR}/${subdir}\""
   if [ -d "${LOCALDIR}/${subdir}" ]
   then
