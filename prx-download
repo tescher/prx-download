@@ -32,8 +32,8 @@ do
   if [ -d "${LOCALDIR}/${subdir}" ]
   then
     cd "${LOCALDIR}/${subdir}"
-#    num_downloaded=$(wget -N ${wget_opts} ftp://${FTP_SERVER}/${ftpdir}/* 2>&1 | grep -c 'saved')
-    wget -N ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_SERVER}/${ftpdir}/*
+    num_downloaded=$(wget -N ftp://${FTP_USER}:${FTP_PASSWORD}@${FTP_SERVER}/${ftpdir}/* 2>&1 | grep -c 'saved')
+    
     if (( num_downloaded > 1 ))
     then
       mesg="${num_downloaded} files downloaded to ${LOCALDIR}/${subdir} for ${show}"
